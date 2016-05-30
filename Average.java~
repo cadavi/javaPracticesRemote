@@ -1,0 +1,7 @@
+/*Write a program that reads two integers from the keyboard and prints their average.
+Do not forget that dividing two integers always returns an integer.*/
+
+public class Average{
+  public static void main(String args[]){
+  }
+}

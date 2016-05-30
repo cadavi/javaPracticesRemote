@@ -1,0 +1,8 @@
+/*
+Write a program that reads an integer. If the integer is between 1 and 4, then the
+program should print one, two, three, or four, respectively. If the integer is not
+between 1 and 4, then the program should print Number not between one and four.
+Use a switch statement.
+*/
+public class SwitchStatement{
+}

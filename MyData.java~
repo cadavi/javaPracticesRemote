@@ -1,0 +1,4 @@
+//Write a program that prints your name and address. Feel free to use a fake address.
+public class MyData{
+  System.out.println("My name is: Carlos Davi Mendez M. and livesin Santo Domingo, Dominican Republic");
+}
