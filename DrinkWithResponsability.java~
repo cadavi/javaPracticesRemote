@@ -1,0 +1,5 @@
+/*Write a program that checks if the user is underage. If they are, then the program
+should tell them not to go to the bar. If they are over 21, then the program should
+print that they are allowed to go to the bar, but they should drink responsibly.*/
+public class DrinkWithResponsability{
+}
