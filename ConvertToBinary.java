@@ -13,7 +13,7 @@ public class ConvertToBinary{
       number = product;
       System.out.print("The product: "+number);
       System.out.println();
-      System.out.println("The remainder: "+remainder);
+      ///System.out.println("The remainder: "+remainder);
       if(number == 1 && remainder == 0){
         break;
       }
