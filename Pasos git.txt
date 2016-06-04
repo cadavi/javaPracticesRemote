@@ -1,0 +1,82 @@
+Pasos git.
+1. Crear el repositorio donde los fuentes de nuestro proyecto va a recidir con el sigt. comando:
+   mkdir cenapecFinanzasCap
+
+2. Nos posicionamos en el repositorio creado anteriormente para empezar a trabajar allí.
+   cd cenapecFinanzasCap
+
+3. Marcar el inicio de nuestro proyecto(repositorio) para que Git pueda monitorear todos
+   nuestros cambios, lo hacemos con el comando: git init
+
+4. Comprobar que nuestro repositorio ha sido marcado con el sgte.comando:
+   ls -la , si podemos encontrar una carpeta oculta llamada .git nuestro repositorio ha sido marcado
+------------------------------------------------------------------------------------------------------
+* Comando para agregar un archivo al repositorio para que luego sea confirmado con un commit: git add nombreArchivo.txt
+* comando para agregar todos los archivos al repositorio local para que luego sea confirmado con un commit: git add -A
+* comando para ver el estatus de un archivo: git status
+* comando para confirmar el cambio de algún archivo: git commit -m "Mensaje informativo"
+* comando para ver los cambios que se han realizo sobre un archivo: git log, git log --oneline
+* comando para ver los vinculos remotos que tenemos configurados: git remote -v
+* comando para cambiar que nombres a los vinculos remotos ya creados: git remote rename nombreActual nombreNuevo
+* comando para crear un vinculo entre nuestro repositorio local y repositorio remoto: git remote add alias_del_vinculo https://github.com/cadavi/cenapecFinanzasCap.git
+* comando para eliminar un vinculo: git remote rm nombre_del_vinculo
+* comando para guardar los códigos de los cambios en un archivo .txt: git log > commits.txt
+* comando para ver diferentes versiones de nuestros archivos a travez de los cambios que se han realizado(ojo, este comando no deshace cambios, sólo es para fines de ver diferentes versiones de los archivos):
+  git checkout código_commit, git checkout master(volver a ver todos los cambios hasta el momento)
+* comando para deshacer cambios sobre los archivos que se le le hallan hechos commits anteriormente: 
+  git reset --soft código_commit (no toca nuestro código), git reset --mixed código_commit (no borra el stage area, ni el working area), git reset --hard código_commit(borra absolutamente todo)
+* comando para mostrar las ramas: git branch (la rama con aterisco y coloreada es donde estamos ubicados)
+* comando para crear una rama: git branch nombre_de_la_rama(la rama se va a crear a partir del contenido de la rama en la cual estaremos situados al momento de usar el comando para crear la nueva).
+* comando para cambiar de rama: git checkout nombre_de_la_rama
+* comando para crear y cambiar a la rama creada automáticamente: git checkout -b nombre_de_la_rama
+* comando para eliminar una rama: git branch -d nombre_de_la_rama
+
+------------------------------------------------------------------------------------------------------
+
+--Subir cambios a un repositorio remoto:
+
+1. Para subir cambios a github lo primero que haremos será crear el repositorio remoto en la página github
+   con un usurio ya creado.
+
+2. Vinculamos nuestro repositorio local con el repositorio remoto previamente creado. comando:
+   git remote add alias_del_vinculo https://github.com/cadavi/cenapecFinanzasCap.git
+
+3. Para confirmar si el vinculo se creó correctamente listamos todos los vinculos creados con el sgte. comando:
+   git remote -v
+  
+   **A partir de ahora ya podemos interactuar con el servidor remoto y el local
+
+4. Comando para subir los cambios al repositorio remoto: git push alias_del_vinculo master(o la rama que deseas subir)
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+--Empezar a trabar en el reposito de github(remoto) y luego bajarlo a nuestro repositorio local
+
+1. Creamos el repositorio en github https://github.com/cadavi/escuelaITProyecto2.git (ejemplo de una URL de un repositorio que queremos clonar )
+
+2. Clonamos el contenido del repositorio remoto(github) en nuestro repositorio local con el sgte. comando:
+   git clone https://github.com/cadavi/escuelaITProyecto2.git
+   **Ojo: cuando clonamos un repositorio vacio este tambien nos crea un vinculo por default llamado: origin. Por ejemplo: git remote -v devuelve origin como nombre del vinculo
+   entre el repositorio local y el remoto
+
+-------------------------------------------------------------------------------------------------------
+--Fusionar dos ramas
+1. Nos situamos en la rama que va a recibir los cambios con el siguiente comando: git checkout nombre-de_la_rama
+
+2. Fusionamos las ramas con el sgte. comando: git merge nombre_de_la_rama_de_donde_vamos_a_extarer_los_cambios
+  **Fast-Forward: Simple y automático. No pregunta nada, sólo hace la fusión.
+  **Manual-merge: largo y manual, antes de hacer la función tiene que pasar por nosotros, normalmente ocurre cuando se trabaja en los
+    mismo archivo o linea de códigos.
+
+-------------------------------------------------------------------------------------------------------
+--Tags(Etiquetas de versiones)
+ **Son simples puntos especifícos en la historia de nuestro proyecto y se usan para 
+para marcar alguna versión del mismo. Ejemplo: versión 1.0, 1.1
+
+-------------------------------------------------------------------------------------------------------
+-- Conectarse al repositorio remoto de cenapec
+1. git remote add nombre_vinculo oracle@srv-app-01.cenapec.edu.do:cenapeccap.git
+2. git remote -v
+3. git push nombre_vinculo 
+4. password del usuario de oracle: UsCk1mdTqc89
+  
