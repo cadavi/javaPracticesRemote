@@ -1,0 +1,14 @@
+import java.util.*;
+public class Palindrome{
+  public static void main(String args[]){
+    System.out.print("Enter the word: ");
+    Scanner keyboard = new Scanner(System.in);
+    String letter = keyboard.next();
+    String forward;
+    for(int i =0 ; i < letter.length(); i++){
+      int end = i + 1;
+      forward = letter.substring(i, end);
+      System.out.println(forward);
+    }
+  }
+}
