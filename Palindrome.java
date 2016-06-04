@@ -5,26 +5,24 @@ public class Palindrome{
     Scanner keyboard = new Scanner(System.in);
     String letter = keyboard.next();
     char forward;
-    String forwardToString;
-    char backwards;
-    String backwardsToString;
-    int end = letter.length();
+    String forwardString;
+    char backward;
+    String backwardString;
     boolean isPalindrome = true;
-    for(int i =0 ; i < letter.length(); i++){
-      forward = letter.charAt(i);
-      forwardToString = String.valueOf(forward);//Convert char to String
-      --end;
-      backwards =  letter.charAt(end);
-      backwardsToString = String.valueOf(backwards);//Convert char to String
-         if (forwardToString.compareTo(backwardsToString) != 0){
-             isPalindrome = false;
-             break;
+    for(int i = 0, end = letter.length() - 1; i < letter.length(); ++i, --end){
+        forward = letter.charAt(i);
+        forwardString = String.valueOf(forward);
+        backward = letter.charAt(end);
+        backwardString = String.valueOf(backward);
+        if(forwardString.compareTo(backwardString) != 0){
+          isPalindrome = false;
+          break;
         }
-      }
-      if(isPalindrome == true){
-         System.out.println("The string is palindrome");
-      }else{
-         System.out.println("The string is NOT palindrome");
-      }
+    }
+    if(isPalindrome == true){
+       System.out.println("The letter is palindrome");
+    }else{
+       System.out.println("The letter is NOT palindrome");
     }
   }
+}
