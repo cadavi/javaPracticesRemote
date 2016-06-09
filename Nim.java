@@ -3,6 +3,7 @@ public class Nim{
   public static void main(String args[]){
     System.out.println("Welcome to my game of nim");
     Scanner inputTotalOfToothpicks = new Scanner(System.in);
+    int inputTotalOfToothpicksComputer = 0;
     Scanner inputRemoreToothpicks = new Scanner(System.in);
     int totalOfToothpicks = 0;
     int toothpicksToRemove;
@@ -55,6 +56,22 @@ public class Nim{
       }while(totalOfToothpicks > 0);
       winMsg = (win)?"Human win!":"Computer win!";
       System.out.println(winMsg);
+    }else{
+      inputTotalOfToothpicksComputer = rand.nextInt(31 - 21) + 21;
+      System.out.println("Computer, choose the total number of toothpicks " + inputTotalOfToothpicksComputer);
+      isHuman = true;
+      while(inputTotalOfToothpicksComputer > 0 ){
+        if(isHuman){
+          System.out.print("Human, there are " + inputTotalOfToothpicksComputer + " toothpicks left. How many toothpicks do you want to remove? ");
+          toothpicksToRemove = inputRemoreToothpicks.nextInt();
+           while(toothpicksToRemove < 1 || toothpicksToRemove > 3){
+              System.out.print("Only can remove 1, 2 or 3 toothpicks");
+              toothpicksToRemove = inputRemoreToothpicks.nextInt();
+            }
+           isHuman = false;
+        }
+      }
+      
     }
   }
 }
