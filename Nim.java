@@ -58,20 +58,35 @@ public class Nim{
       System.out.println(winMsg);
     }else{
       inputTotalOfToothpicksComputer = rand.nextInt(31 - 21) + 21;
+      totalOfToothpicks = inputTotalOfToothpicksComputer;
       System.out.println("Computer, choose the total number of toothpicks " + inputTotalOfToothpicksComputer);
       isHuman = true;
-      while(inputTotalOfToothpicksComputer > 0 ){
+      while(totalOfToothpicks > 0 ){
         if(isHuman){
-          System.out.print("Human, there are " + inputTotalOfToothpicksComputer + " toothpicks left. How many toothpicks do you want to remove? ");
+          System.out.print("Human, there are " + totalOfToothpicks + " toothpicks left. How many toothpicks do you want to remove? ");
           toothpicksToRemove = inputRemoreToothpicks.nextInt();
            while(toothpicksToRemove < 1 || toothpicksToRemove > 3){
               System.out.print("Only can remove 1, 2 or 3 toothpicks");
               toothpicksToRemove = inputRemoreToothpicks.nextInt();
             }
-           isHuman = false;
+           totalOfToothpicks -= toothpicksToRemove;
+           if(totalOfToothpicks <= 0){
+              System.out.println("Game over");
+              win = false;
+              break;
+           }
         }
+        randResult = rand.nextInt(4 - 1)  + 1;
+        System.out.println("Computer, there are " + totalOfToothpicks + " toothpicks left. How many toothpicks do you want to remove? " + randResult);
+        totalOfToothpicks -= randResult;
+        if(totalOfToothpicks <= 0){
+           System.out.println("Game over");
+           win = true;
+           break;
+         }
       }
-      
+      winMsg = (win)?"Human win!":"Computer win!";
+      System.out.println(winMsg);
     }
   }
 }
