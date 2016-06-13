@@ -21,7 +21,10 @@ public class TriangleOfRandomNumbers{
   
   public static void drawTriangle(int triangleHeight){
     for(int i = 0; i < triangleHeight; i++){
-      System.out.println(" " + randomNumbers());
+      System.out.println(randomNumbers());
+      for(int j = triangleHeight - 1; j <= triangleHeight; j+=1){
+        System.out.print(" " + randomNumbers());
+      }
     }
   }
 }
