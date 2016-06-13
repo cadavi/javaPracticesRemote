@@ -1,20 +1,20 @@
 import java.util.*;
 public class Fibonacci{
   public static void main(String args[]){
-    fibonacciSerie(10);
+    fibonacciSerie(20);
   }
   
   public static void fibonacciSerie(int n){
-    for(int i = 0, f = 0, j = 0; i <20; i++){
-      if(i <= 1){
-        f += i;
-        j = f;
-        System.out.println(" Soy i " + i);
-        continue;
-      }
-      f += j;
-      j -= f;
-      System.out.println(" " + f);
+    ;
+    int a = 0;
+    int b = 1;
+    int c = 0;
+    System.out.print(a+" "+b);
+    for(int i = 2; i <= n - 1; i++){
+       c = a + b;//1, 2, 3, 5, 8, etc.
+       a = b;//1, 1, 2, 3, 5 etc.
+       b = c;//1, 2, 3, 5, 8 etc.
+       System.out.print(" " + c);
     }
   }
 }
