@@ -1,0 +1,12 @@
+import java.util.*;
+public class SalesTax{
+  public static void main(String args[]){
+    System.out.print("Tax: " + calSaleTax(100));
+  }
+  
+  public static double calSaleTax(double priceOfItem){
+    final int SALE_TAX = 7;
+    double result = (priceOfItem * SALE_TAX) / 100;
+    return result;
+  }
+}
