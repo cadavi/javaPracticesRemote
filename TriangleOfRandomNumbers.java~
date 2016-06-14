@@ -8,8 +8,7 @@ public class TriangleOfRandomNumbers{
     System.out.print("Enter the height of triangle: ");
     Scanner keyboard = new Scanner(System.in);
     int triangleHeight = keyboard.nextInt();
-    drawTopTriangle(triangleHeight);
-    drawBottomTriangle(triangleHeight);
+    drawTriangle(triangleHeight);
   }
   
   public static int randomNumbers(){
@@ -20,18 +19,10 @@ public class TriangleOfRandomNumbers{
     return randomNumber;
   }
   
-  public static void drawTopTriangle(int triangleHeight){
-    for(int i = 1; i <= triangleHeight; i++){
+  public static void drawTriangle(int triangleHeight){
+    for(int i = 0; i < triangleHeight; i++){
       System.out.println(randomNumbers());
-      for(int j = 0; j < i; j++){
-        System.out.print(randomNumbers() + " ");
-      }
-    }
-  }   
-  public static void drawBottomTriangle(int triangleHeight){
-    for(int i = 1; i <= triangleHeight+1; i++){
-      System.out.println(randomNumbers());
-      for(int j = triangleHeight; j > i; j--){
+      for(int j = 0; j < triangleHeight - 3; j++){
         System.out.print(randomNumbers() + " ");
       }
     }
