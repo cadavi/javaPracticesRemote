@@ -1,6 +1,6 @@
 import java.text.*;
 import java.util.*;
-public class TradingGame{
+public class TradingGameExtended{
   static final int NUMBER_OF_DAYS = 10;
   static final double BASE_PRICE = 10;
   static final double VARIATION = 5;
