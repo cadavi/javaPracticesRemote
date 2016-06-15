@@ -29,9 +29,38 @@ public class TradingGame{
           case 2: 
             System.out.println("Price of apples is: " + currencyFormatter(applePrice));
             System.out.println("Price of pear is: " + currencyFormatter(pearPrice));
+            break;
+          case 3:{ //Buy apples
+            int amount = getQuantity("apples", "buy");
+            if(!buyApples(amount)){
+              System.out.println("Yo don't have enough money");
+            }
+            break;
+          }//end case 3
+          case 4:{//Sell apples
+            int amount =  getQuantity("apples", "sell");
+            if(!sellApples(amount)){
+              System.out.println("Yo don't have enough apples");
+            }
+            break;
+          }//end case 4
+          case 5:{
+            int amount = getQuantity("pears", "buy");
+            if(!buyPears(amount)){
+              System.out.println("Yo don't have enough money");
+            }
+            break;
+          }//end case 5
+          case 6:{
+            int amount = getQuantity("pears", "sell");
+            if(!sellPears(amount)){
+               System.out.println("Yo don't have enough pears");
+            }
+          }//end case 6
         }//end switch
       }while(choice != 7);//end do-while loop
     }//end for loop
+    System.out.println( "You finished with:" + currencyFormatter(cash));
   }
   
   public static double computePrice(double basePrice, double variation){
@@ -68,4 +97,47 @@ public class TradingGame{
     DecimalFormat myFomatter = new DecimalFormat("$### ,###.00");
     return myFomatter.format(amount);
   }//end method currencyFormatter
+  
+  public static int getQuantity(String product, String action){
+    System.out.print("How many " + product + " do you want to " + action + " ?");
+    Scanner keyboard = new Scanner(System.in);
+    return keyboard.nextInt();
+  }//end method getQuantity
+  
+  public static boolean buyApples(int amount){
+    if((amount * applePrice < cash)){
+      cash -= amount * applePrice;
+      appleInventory += amount;
+      return true;
+    }
+    return false;
+  }//end method buyApples
+  
+  public static boolean sellApples(int amount){
+    if(amount > appleInventory){
+      return false;
+    }
+    cash += amount * applePrice;
+    appleInventory -= amount;
+    return true;
+  }//end method sellApples
+  
+  public static boolean buyPears(int amount){
+    if(amount * pearPrice < cash){
+      cash -= amount * pearPrice;
+      pearInventory += amount;
+      return true;
+    }
+    return false;
+  }//end method buyPears
+  
+  public static boolean sellPears(int amount){
+    if(pearInventory < amount){
+      return false;
+    }
+    cash += amount * pearPrice;
+    pearInventory -= amount;
+    return true;
+  }//end method sellPears
+  
 }
