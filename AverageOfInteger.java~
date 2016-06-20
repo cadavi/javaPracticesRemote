@@ -1,0 +1,6 @@
+/*
+Write a method that takes as input a variable number of integers. The method should
+return the average of the integers as a double.Write a full program to test the method.
+ */
+public class AverageOfInteger{
+}
