@@ -1,0 +1,5 @@
+/*Write a method that takes as input an array of integers. The method should reverse
+the array. Write a full program that tests the method.
+*/
+public class ReverseTheArray{
+}//end class ReverseTheArray
