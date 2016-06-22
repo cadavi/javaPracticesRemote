@@ -1,0 +1,5 @@
+/*Write a method that takes as input a two-dimensional array of integers. The method
+should return a one-dimensional array of elements of type double that contains the
+average for each row. Write a full program that tests the method.*/
+public class AvgTwoDim{
+}
