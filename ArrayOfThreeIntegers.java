@@ -11,7 +11,7 @@ public class ArrayOfThreeIntegers{
     for(int i:getArray){
       System.out.println(i);
     }//end for
-    System.out.println("Hola soy ArrayOfThreeIntegers");
+    System.out.println("---------------------------");
     for(int i : savedPosition){
       System.out.println(i);
     }//end for
