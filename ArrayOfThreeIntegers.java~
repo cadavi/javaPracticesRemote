@@ -1,8 +1,0 @@
-/*Write a method that takes as input an array of integers and returns an array of
-three integers. You can assume that the input array contains at least three elements.
-The returned array should contain the three consecutive elements in the input array
-with the biggest sum. For example, if the input array is {3,6,5,2,6}, then the output
-array should be: {3,6,5} because 3+6+5=14, which is bigger than 6+5+2=13 and
-5+2+6=13. Write a full program that tests the method.*/
-public class ArrayOfThreeIntegers{
-}
