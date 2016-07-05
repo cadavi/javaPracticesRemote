@@ -4,14 +4,15 @@ public class Main{
     BankAccount[] bk = new BankAccount[1000];
     Scanner keyboard = new Scanner(System.in);
     int i;
+    int inc = 0;
     do{
       printMenu();
       i = keyboard.nextInt();
       switch(i){
         case 1: 
-          BankAccount account = new BankAccount();
-          System.out.println("Account number: " + account);
-          bk[account.getAccountNumber()] = account;
+          bk[inc++] = new  BankAccount();
+          System.out.println("Inc. values " + (inc - 1));
+          System.out.println("Account number: " + bk[(inc-1)].toString());
           break;
         case 2:{
           System.out.println("What's your account number?");
@@ -19,9 +20,23 @@ public class Main{
           System.out.println("What's the amount that you want to withdraw?");
           double amountToW = keyboard.nextDouble();
           bk[accNum].withdrawMoney(amountToW);
-          System.out.println("New balance: " + bk[accNum].getCash());
           break;
-        }
+        }//end case 2
+        case 3:{
+          System.out.println("What's your account number?");
+          int accNum = keyboard.nextInt(); 
+          System.out.println("What's the amount that you want to deposit?");
+          double amountToW = keyboard.nextDouble();
+          bk[accNum].depositMoney(amountToW);
+          break;
+        }//end case 3
+        case 4:{
+          System.out.println("What's your account number?");
+          int accNum = keyboard.nextInt(); 
+          System.out.println("Balance: "+bk[accNum].getBalance());
+          break;
+        }//end case 4
+        case 5: System.exit(0);
       }//end switch
     }while(i != 5);
   }//end main method
