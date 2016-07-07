@@ -8,13 +8,17 @@ public class ReverseString{
   }//end method main
   
   public static void reverseStr(StringBuffer str){
-    char aux;
-    for(int i = str.length()-1, j = 0; i > 0; i--, j++){
-      aux = str.charAt(j);
-      str.setCharAt(j, str.charAt(i));
-      //str.setCharAt(j, aux);
+    StringBuffer stB = new StringBuffer();
+    for(int i = str.length()-1, j = 0; i >= 0; --i, --j){
+      stB.append(str.charAt(i));
     }//end for
-    //str.reverse();
+    str = new StringBuffer(stB);
     System.out.println(str);
+    //str.reverse();
   }//end method reverseStr
+  
+  public static void easyWay(StringBuffer str){
+    str.reverse();
+    System.out.println(str);
+  }//end method easyWay
 }//end class reverseString
