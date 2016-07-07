@@ -1,0 +1,6 @@
+/*Write a method that takes as input a StringBuffer
+and reverses it. For example, if the input string is abc, 
+then the method will change the string to cba. 
+The method should have void return type.*/
+public class ReverseString{
+}//end class reverseString

@@ -14,17 +14,27 @@ public class SecondLargestNumberAL{
       System.out.println(d);
     }//end for
     
-    System.out.println("Bigger: " + secLargestDouble(aL));
+    System.out.println("Second largest in the list: " + secLargestDouble(aL));
   }//end main method
   
   public static Double secLargestDouble(ArrayList<Double> a){
     double largestD =  a.get(0);
     double aux;
-    double sL = a.get(1);
     //largest
     for(int i = 0; i < a.size(); i++){
       if(a.get(i) > largestD ){
         largestD = a.get(i);
+      }//end if
+    }//end for
+    
+    //delete the largest
+    a.remove(new Double(largestD));
+    //at this point the largest number is removed from the ArrayList,
+    //so, we will search for the new largest(that is, the second largest).
+    largestD =  a.get(0);
+    for(Double d : a){
+      if(d > largestD ){
+        largestD = d;
       }//end if
     }//end for
     return largestD;
