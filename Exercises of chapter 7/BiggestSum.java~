@@ -1,0 +1,7 @@
+/*
+Write a method that takes as input an ArrayList of integers. The methods should
+return an ArrayList of integers that contains the three consecutive integers in the
+input ArrayList with the biggest sum.
+*/
+public class BiggestSum{
+}//end class BiggestSum
