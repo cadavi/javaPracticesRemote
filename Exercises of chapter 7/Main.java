@@ -1,7 +1,6 @@
-import java.util.*;
 public class Main{
   public static void main(String[] args){
     Cards card = new Cards();
-    card.printCards();
+    System.out.println(card);   
   }//end main method
 }//end Main class
