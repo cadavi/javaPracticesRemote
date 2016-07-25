@@ -1,0 +1,9 @@
+/*
+Write a method that takes as input two ArrayLists of integers. The method should
+return true when the ArrayLists have at least one element in common and false
+otherwise.
+ */
+public class CompareArrayList{
+  public static void main(String[] args){
+  }//end main method main
+}//end class CompareArrayList
